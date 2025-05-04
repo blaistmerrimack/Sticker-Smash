@@ -1,9 +1,13 @@
 import domtoimage from "dom-to-image"
-import { type ImageSource } from "expo-image"
 import * as ImagePicker from "expo-image-picker"
 import * as MediaLibrary from "expo-media-library"
 import { useRef, useState } from "react"
-import { Platform, StyleSheet, View } from "react-native"
+import {
+  Platform,
+  StyleSheet,
+  View,
+  type ImageSourcePropType,
+} from "react-native"
 import { GestureHandlerRootView } from "react-native-gesture-handler"
 import { captureRef } from "react-native-view-shot"
 
@@ -23,9 +27,9 @@ export default function Index() {
   )
   const [showAppOptions, setShowAppOptions] = useState<boolean>(false)
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false)
-  const [pickedEmoji, setPickedEmoji] = useState<ImageSource | undefined>(
-    undefined
-  )
+  const [pickedEmoji, setPickedEmoji] = useState<
+    ImageSourcePropType | undefined
+  >(undefined)
   const [status, requestPermission] = MediaLibrary.usePermissions()
   const imageRef = useRef<View>(null)
 

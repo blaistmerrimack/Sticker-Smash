@@ -1,4 +1,4 @@
-import { type ImageSource } from "expo-image"
+import { type ImageSourcePropType } from "react-native"
 import { Gesture, GestureDetector } from "react-native-gesture-handler"
 import Animated, {
   useAnimatedStyle,
@@ -8,7 +8,7 @@ import Animated, {
 
 type Props = {
   imageSize: number
-  stickerSource: ImageSource
+  stickerSource: ImageSourcePropType
 }
 
 export default function EmojiSticker({ imageSize, stickerSource }: Props) {
